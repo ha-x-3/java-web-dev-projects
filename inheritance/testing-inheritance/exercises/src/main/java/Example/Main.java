@@ -1,3 +1,5 @@
+package Example;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -9,7 +11,7 @@ public class Main {
         HouseCat spike = new HouseCat("Spike");
         System.out.println(spike.getWeight());
 
-        //Cat plainCat = new Cat(8.6);
+        //Example.Cat plainCat = new Example.Cat(8.6);
         HouseCat cheshireCat = new HouseCat("Cheshire", 12);
 
         //System.out.println(plainCat.noise());

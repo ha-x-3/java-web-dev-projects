@@ -1,3 +1,5 @@
+package Example;
+
 public abstract class Cat {
 
     private boolean tired = false;
