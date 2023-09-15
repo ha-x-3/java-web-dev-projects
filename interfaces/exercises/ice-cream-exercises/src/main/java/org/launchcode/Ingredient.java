@@ -43,4 +43,5 @@ public abstract class Ingredient {
                 "Cost: $" + cost + "\n" +
                 "Allergens: " + allergens + "\n";
     }
+
 }

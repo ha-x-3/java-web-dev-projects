@@ -6,4 +6,10 @@ public class Cone extends Ingredient {
     public Cone(String aName, double aCost, ArrayList<String> someAllergens){
         super (aName, aCost, someAllergens);
     }
+
+    @Override
+    public String toString() {
+        return getName() + ": $" + getCost() + "\n";
+    }
+
 }

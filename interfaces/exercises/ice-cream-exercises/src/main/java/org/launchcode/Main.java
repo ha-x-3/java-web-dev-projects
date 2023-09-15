@@ -7,11 +7,21 @@ public class Main {
         Case menu = new Case();
         ArrayList<Flavor> flavors = menu.getFlavors();
         ArrayList<Cone> cones = menu.getCones();
+        ArrayList<Topping> toppings = menu.getToppings();
 
         // TODO: Use a Comparator class to sort the 'flavors' array alphabetically by the 'name' field.
-
+        System.out.println(flavors);
+        flavors.sort(new FlavorComparator());
+        System.out.println(flavors);
         // TODO: Use a Comparator class to sort the 'cones' array in increasing order by the 'cost' field.
+        System.out.println(cones);
+        cones.sort(new ConeComparator());
+        System.out.println(cones);
 
-        // TODO: Print the 'flavors' and 'cones' lists (in a clear manner) to verify the sorting.
+        // TODO: Use a Comparator class to sort the 'toppings' array in increasing order by the 'cost' field.
+        System.out.println(toppings);
+        toppings.sort(new ToppingComparator());
+        System.out.println(toppings);
     }
+
 }

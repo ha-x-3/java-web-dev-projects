@@ -9,5 +9,9 @@ public class Flavor extends Ingredient {
         super (aName, aCost, someAllergens);
     }
 
+    @Override
+    public String toString() {
+        return getName() + "\n";
+    }
 
 }
