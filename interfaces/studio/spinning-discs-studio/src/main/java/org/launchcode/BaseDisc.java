@@ -8,10 +8,10 @@ public abstract class BaseDisc {
     private String discType;
 
     public BaseDisc(String name, int capacity, String contents, String discType) {
-        this.name = name;
-        this.capacity = capacity;
-        this.contents = contents;
-        this.discType = discType;
+        setName(name);
+        setCapacity(capacity);
+        setContents(contents);
+        setDiscType(discType);
     }
 
     public String getName() {
@@ -44,5 +44,14 @@ public abstract class BaseDisc {
 
     public void setDiscType(String discType) {
         this.discType = discType;
+    }
+
+    public String reportInfo() {
+        String newline = System.lineSeparator();
+        return newline +
+                "Name: " + getName() + newline +
+                "Storage Capacity: " + getCapacity() + "MB" + newline +
+                "Contents: " + getContents() + newline +
+                "Disk Type: " + getDiscType() + newline;
     }
 }
