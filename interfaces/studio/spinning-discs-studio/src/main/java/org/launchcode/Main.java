@@ -8,9 +8,17 @@ public class Main {
         DVD myDVD = new DVD("LaunchCode's Blooper Reel", 15, "wav", "DVD-RW");
         // TODO: Call each CD and DVD method to verify that they work as expected.
 
+        myDVD.spinDisc();
+        myCD.spinDisc();
+
         myDVD.throwDisc();
         myCD.throwDisc();
 
+        myDVD.laser();
         myCD.laser();
+
+        myDVD.storeData();
+        myCD.storeData();
+
     }
 }
