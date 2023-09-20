@@ -9,7 +9,7 @@ public class DVD extends Media implements Rewritable {
 
     @Override
     public String toString() {
-        return super.toString() + getFormattedFileList("Video files:");
+        return super.toString() + getFormattedFileList("Video files");
     }
 
     @Override

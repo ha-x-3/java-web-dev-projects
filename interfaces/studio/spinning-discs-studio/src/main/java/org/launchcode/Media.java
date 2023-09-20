@@ -37,7 +37,7 @@ public abstract class Media extends BaseDisc{
         StringBuilder fileList = new StringBuilder();
         String newline = System.lineSeparator();
         if (files.size() > 0) {
-            fileList.append(newline).append(header).append(";");
+            fileList.append(newline).append(header).append(":");
             for (File file : files) {
                 fileList.append(newline).append("\t").append(file);
             }
