@@ -1,30 +1,52 @@
 package org.launchcode;
 
-public class DVD extends BaseDisc implements OpticalDisc{
-    public DVD(String name, int capacity, String contents, String discType) {
-        super(name, capacity, contents, discType);
-    }
-    // TODO: Implement your custom interface.
+public class DVD extends Media implements Rewritable {
 
-    // TODO: Determine which fields, methods, and constructors can be extended from the base class and which ones
-    //  need to be declared separately.
-    @Override
-    public void spinDisc(){
-        System.out.println("A DVD spins at a rate of 570 - 1600 rpm.");
+
+    public DVD(String name) {
+        super(name, "DVD", 1200, 4700);
     }
 
     @Override
-    public void throwDisc(){
-        System.out.println("A DVD can be thrown up to 30 feet.");
+    public String toString() {
+        return super.toString() + getFormattedFileList("Video files:");
     }
 
     @Override
-    public void laser(){
-        System.out.println("Most DVD lasers use a 405nm wavelength to read and write data.");
+    public void writeFile(File file) {
+        spinDisc();
+        if (getFiles().contains(file)) {
+            System.out.println("The video"  + file.getName() + " has already been added.");
+        } else if (getSpaceUsed() + file.getSize() > getCapacity()) {
+            System.out.println("WARNING! There is not enough space on the " + getDiskType() + " for " + file.getName() + ".");
+        } else {
+            getFiles().add(file);
+            System.out.println("The video" + file.getName() + " has been added to " + getName() + ".");
+        }
     }
 
     @Override
-    public void storeData(){
-        System.out.println("A DVD stores up to 17GB of data.");
+    public void removeFile(File file) {
+        spinDisc();
+        if (filePresent(file)) {
+            getFiles().remove(file);
+            System.out.println("The file " + file.getName() + " has been removed from the " + getDiskType() + ".");
+        }
+    }
+
+    @Override
+    public void reformatDisc() {
+        spinDisc();
+        getFiles().clear();
+        setDiskType("DVD");
+        setName("Unnamed DVD");
+    }
+
+    @Override
+    public void runFile(File file) {
+        if (filePresent(file)) {
+            spinDisc();
+            System.out.println("Watching " + file.getName() + "...");
+        }
     }
 }
