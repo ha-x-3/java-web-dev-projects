@@ -1,2 +1,9 @@
-package org.launchcode;public class CheckFileExtensionException {
+package org.launchcode;
+
+public class CheckFileExtensionException extends Exception{
+
+    public CheckFileExtensionException(String message) {
+        super(message);
+    }
+
 }
